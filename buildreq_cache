@@ -1,0 +1,4 @@
+2024.07.02
+pkgconfig(absl_synchronization)
+pkgconfig(gtest)
+pkgconfig(gtest_main)
