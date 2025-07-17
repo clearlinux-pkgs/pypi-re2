@@ -6,10 +6,10 @@
 # autospec commit: 65cf152
 #
 Name     : pypi-re2
-Version  : 2025.06.26
-Release  : 3
-URL      : https://github.com/google/re2/archive/2025-06-26/re2-2025.06.26.tar.gz
-Source0  : https://github.com/google/re2/archive/2025-06-26/re2-2025.06.26.tar.gz
+Version  : 2025.07.17
+Release  : 4
+URL      : https://github.com/google/re2/archive/2025-07-17/re2-2025.07.17.tar.gz
+Source0  : https://github.com/google/re2/archive/2025-07-17/re2-2025.07.17.tar.gz
 Summary  : RE2 is a fast, safe, thread-friendly regular expression engine.
 Group    : Development/Tools
 License  : BSD-3-Clause
@@ -57,15 +57,15 @@ python3 components for the pypi-re2 package.
 
 
 %prep
-%setup -q -n re2-2025-06-26
-cd %{_builddir}/re2-2025-06-26
+%setup -q -n re2-2025-07-17
+cd %{_builddir}/re2-2025-07-17
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1750973877
+export SOURCE_DATE_EPOCH=1752795997
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -103,8 +103,8 @@ LDFLAGS="$CLEAR_INTERMEDIATE_LDFLAGS"
 export MAKEFLAGS=%{?_smp_mflags}
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/pypi-re2
-cp %{_builddir}/re2-2025-06-26/LICENSE %{buildroot}/usr/share/package-licenses/pypi-re2/e310076ee4f65219003bfae2427646e0236c5141 || :
-cp %{_builddir}/re2-2025-06-26/python/LICENSE %{buildroot}/usr/share/package-licenses/pypi-re2/e310076ee4f65219003bfae2427646e0236c5141 || :
+cp %{_builddir}/re2-2025-07-17/LICENSE %{buildroot}/usr/share/package-licenses/pypi-re2/e310076ee4f65219003bfae2427646e0236c5141 || :
+cp %{_builddir}/re2-2025-07-17/python/LICENSE %{buildroot}/usr/share/package-licenses/pypi-re2/e310076ee4f65219003bfae2427646e0236c5141 || :
 pushd python
 python3 -tt setup.py build  install --root=%{buildroot}
 popd
